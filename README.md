@@ -31,7 +31,7 @@ kubectl get nodes
 kubectl get pods
 ```
 
-- Get the external ips of the services (you can also get external ips from Azure Portal)
+- Get the external ips of the services (you can also get the external ips from Azure Portal)
 
 ```
 kubectl get service api1
