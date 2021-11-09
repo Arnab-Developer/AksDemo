@@ -46,3 +46,6 @@ http://<api 1 external ip>/HelloApi?name=Jon
 
 http://<api 2 external ip>/HelloApi?name=Jon
 ```
+
+Full tutorial
+[here](https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app).
