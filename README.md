@@ -2,10 +2,11 @@
 
 This is a demo to show how we can deploy ASP.NET web api into AKS.
 
-I was getting some issues related to Azure login from GitHub action, so I manually deployed the containers
-to AKS.
+Creating docker image and push to dockerhub has been done with GitHub action, then pull the image
+from dockerhub and deploy to AKS has been done manually. I was getting some issues related to Azure 
+login from GitHub action, so I manually deployed the containers to AKS.
 
-Steps:
+Steps to manually deploy to AKS with dockerhub image:
 
 - Create a new AKS resource in Azure
 - Login to Azure PowerShell from your local computer or use CloudShell
