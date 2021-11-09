@@ -39,12 +39,10 @@ kubectl get service api1
 kubectl get service api2
 ```
 
-- Open web browser and navigate to the url
+- Open web browser and navigate to the url and you should be able to see the output
 
 ```
 http://<api 1 external ip>/HelloApi?name=Jon
 
 http://<api 2 external ip>/HelloApi?name=Jon
 ```
-
-- You should be able to see the output
