@@ -46,12 +46,12 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/AksDemo.Api1:1.0.0 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.0 .
     
     - name: Docker push
       run: |
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Arnab-Developer --password-stdin
-        docker push ghcr.io/arnab-developer/AksDemo.Api1:1.0.0
+        docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.0
         docker logout
 
   dockerhub-deploy:
