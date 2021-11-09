@@ -17,7 +17,7 @@ installed
 Import-AzAksCredential -ResourceGroupName <resource group name> -Name <aks name>
 ```
 
-- Deploy to AKS
+- Deploy to AKS (aks-deploy.yml is in the root of the repo)
 
 ```
 kubectl apply -f aks-deploy.yml
