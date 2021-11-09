@@ -155,4 +155,4 @@ jobs:
       - uses: azure/k8s-deploy@v1
         with:
           manifests: |
-            manifests/aks-deploy.yml
+            aks-deploy.yml
