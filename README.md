@@ -2,7 +2,7 @@
 
 This is a demo to show how we can deploy ASP.NET web api into AKS.
 
-I was getting some issues related to Azure login from GitHub action, for that I manually deployed the containers
+I was getting some issues related to Azure login from GitHub action, so I manually deployed the containers
 to AKS.
 
 Steps:
