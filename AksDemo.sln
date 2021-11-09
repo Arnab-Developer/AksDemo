@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AksDemo.Api1Test", "AksDemo.Api1Test\AksDemo.Api1Test.csproj", "{1D5C8E09-F0B9-4CC2-B1F6-ADD901FAFFEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AksDemo.Api2Test", "AksDemo.Api2Test\AksDemo.Api2Test.csproj", "{C98C4186-99D9-4E61-B3E1-234F1601B6A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{1D5C8E09-F0B9-4CC2-B1F6-ADD901FAFFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D5C8E09-F0B9-4CC2-B1F6-ADD901FAFFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D5C8E09-F0B9-4CC2-B1F6-ADD901FAFFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98C4186-99D9-4E61-B3E1-234F1601B6A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98C4186-99D9-4E61-B3E1-234F1601B6A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98C4186-99D9-4E61-B3E1-234F1601B6A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98C4186-99D9-4E61-B3E1-234F1601B6A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
