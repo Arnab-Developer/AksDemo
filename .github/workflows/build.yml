@@ -148,6 +148,7 @@ jobs:
     #if: ${{ github.event_name == 'release' }}
     runs-on: ubuntu-latest
     #needs: [dockerhub-deploy-api1, dockerhub-deploy-api2]
+    needs: build
     environment:
       name: AKS
     #  url: 
