@@ -5,7 +5,14 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AksDemo.Api1", "AksDemo.Api1\AksDemo.Api1.csproj", "{C94A653C-32A5-4681-9844-7391C6C24D98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AksDemo.Api2", "AksDemo.Api2\AksDemo.Api2.csproj", "{2C2F1AF0-8DE7-4602-85A2-715C16F5D1C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AksDemo.Api2", "AksDemo.Api2\AksDemo.Api2.csproj", "{2C2F1AF0-8DE7-4602-85A2-715C16F5D1C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1416D64C-6C9E-434F-8CA8-EC5C04A6AFD1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
