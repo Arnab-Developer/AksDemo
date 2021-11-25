@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
+        dotnet-version: 6.0.x
 
     - name: Restore dependencies
       run: dotnet restore
@@ -51,12 +51,12 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.0 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
     
     - name: Docker push
       run: |
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Arnab-Developer --password-stdin
-        docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.0
+        docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.2
         docker logout ghcr.io
 
   github-package-deploy-api2:
@@ -77,12 +77,12 @@ jobs:
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.0 .
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
     
     - name: Docker push
       run: |
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Arnab-Developer --password-stdin
-        docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.0
+        docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.2
         docker logout ghcr.io
 
   dockerhub-deploy-api1:
@@ -106,12 +106,12 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t 45862391/aksdemo.api1:1.0.0 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t 45862391/aksdemo.api1:1.0.2 .
 
     - name: Docker push
       run: |
         echo "${{ secrets.DOCKERHUB_PWD }}" | docker login -u 45862391 --password-stdin
-        docker push 45862391/aksdemo.api1:1.0.0
+        docker push 45862391/aksdemo.api1:1.0.2
         docker logout
 
   dockerhub-deploy-api2:
@@ -135,10 +135,10 @@ jobs:
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api2/Dockerfile' -t 45862391/aksdemo.api2:1.0.0 .
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t 45862391/aksdemo.api2:1.0.2 .
 
     - name: Docker push
       run: |
         echo "${{ secrets.DOCKERHUB_PWD }}" | docker login -u 45862391 --password-stdin
-        docker push 45862391/aksdemo.api2:1.0.0
+        docker push 45862391/aksdemo.api2:1.0.2
         docker logout

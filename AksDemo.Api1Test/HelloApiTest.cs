@@ -10,7 +10,8 @@ namespace AksDemo.Api1Test
         {
             string name = "Test User 1";
             HelloApiController controller = new();
-            string message = controller.Get(name).Value;
+            string? message = controller.Get(name).Value;
+            Assert.NotNull(message);
             Assert.Equal("Hello Test User 1, this is API 1", message);
         }
     }
