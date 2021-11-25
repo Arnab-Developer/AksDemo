@@ -33,6 +33,12 @@ jobs:
     - name: Test
       run: dotnet test --configuration ${{ env.CONFIGURATION }} --no-restore
 
+    - name: Docker build api1
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
+
+    - name: Docker build api2
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
+
   github-package-deploy-api1:
     if: ${{ github.event_name == 'push' }}
     name: GitHub package deploy API 1
