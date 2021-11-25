@@ -33,8 +33,14 @@ jobs:
     - name: Test
       run: dotnet test --configuration ${{ env.CONFIGURATION }} --no-restore
 
+    - name: Publish api1
+      run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
+
     - name: Docker build api1
       run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
+
+    - name: Publish api2
+      run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build api2
       run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
