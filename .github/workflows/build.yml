@@ -51,7 +51,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
+        dotnet-version: 6.0.x
 
     - name: Publish
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
@@ -77,7 +77,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
+        dotnet-version: 6.0.x
 
     - name: Publish
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
@@ -106,7 +106,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
+        dotnet-version: 6.0.x
 
     - name: Publish
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
@@ -135,7 +135,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
+        dotnet-version: 6.0.x
 
     - name: Publish
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
