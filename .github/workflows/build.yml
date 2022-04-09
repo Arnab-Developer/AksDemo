@@ -37,13 +37,13 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build api1
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.3 .
 
     - name: Publish api2
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build api2
-      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.3 .
 
   github-package-deploy-api1:
     if: ${{ github.event_name == 'push' }}
@@ -63,7 +63,7 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.3 .
     
     - name: GitHub Container Registry login
       uses: docker/login-action@v1
@@ -73,7 +73,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Docker push
-      run: docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.2
+      run: docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.3
 
   github-package-deploy-api2:
     if: ${{ github.event_name == 'push' }}
@@ -93,7 +93,7 @@ jobs:
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.3 .
     
     - name: GitHub Container Registry login
       uses: docker/login-action@v1
@@ -103,7 +103,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Docker push
-      run: docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.2
+      run: docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.3
 
   dockerhub-deploy-api1:
     if: ${{ github.event_name == 'release' }}
@@ -126,7 +126,7 @@ jobs:
       run: dotnet publish 'AksDemo.Api1/AksDemo.Api1.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api1/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api1/Dockerfile' -t 45862391/aksdemo.api1:1.0.2 .
+      run: docker build -f 'AksDemo.Api1/Dockerfile' -t 45862391/aksdemo.api1:1.0.3 .
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -135,7 +135,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PWD }}
 
     - name: Docker push
-      run: docker push 45862391/aksdemo.api1:1.0.2
+      run: docker push 45862391/aksdemo.api1:1.0.3
 
   dockerhub-deploy-api2:
     if: ${{ github.event_name == 'release' }}
@@ -158,7 +158,7 @@ jobs:
       run: dotnet publish 'AksDemo.Api2/AksDemo.Api2.csproj' --configuration ${{ env.CONFIGURATION }} -o 'AksDemo.Api2/bin/publish'
 
     - name: Docker build
-      run: docker build -f 'AksDemo.Api2/Dockerfile' -t 45862391/aksdemo.api2:1.0.2 .
+      run: docker build -f 'AksDemo.Api2/Dockerfile' -t 45862391/aksdemo.api2:1.0.3 .
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
@@ -167,4 +167,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PWD }}
 
     - name: Docker push
-      run: docker push 45862391/aksdemo.api2:1.0.2
+      run: docker push 45862391/aksdemo.api2:1.0.3
