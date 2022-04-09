@@ -21,7 +21,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: api1
-        image: 45862391/aksdemo.api1:1.0.0
+        image: 45862391/aksdemo.api1:1.0.3
         ports:
         - containerPort: 80
         resources:
@@ -67,7 +67,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: api1
-        image: 45862391/aksdemo.api2:1.0.0
+        image: 45862391/aksdemo.api2:1.0.3
         ports:
         - containerPort: 80
         resources:
