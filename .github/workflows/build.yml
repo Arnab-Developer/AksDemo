@@ -65,11 +65,15 @@ jobs:
     - name: Docker build
       run: docker build -f 'AksDemo.Api1/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api1:1.0.2 .
     
+    - name: GitHub Container Registry login
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Docker push
-      run: |
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Arnab-Developer --password-stdin
-        docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.2
-        docker logout ghcr.io
+      run: docker push ghcr.io/arnab-developer/aksdemo.api1:1.0.2
 
   github-package-deploy-api2:
     if: ${{ github.event_name == 'push' }}
@@ -91,11 +95,15 @@ jobs:
     - name: Docker build
       run: docker build -f 'AksDemo.Api2/Dockerfile' -t ghcr.io/arnab-developer/aksdemo.api2:1.0.2 .
     
+    - name: GitHub Container Registry login
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Docker push
-      run: |
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Arnab-Developer --password-stdin
-        docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.2
-        docker logout ghcr.io
+      run: docker push ghcr.io/arnab-developer/aksdemo.api2:1.0.2
 
   dockerhub-deploy-api1:
     if: ${{ github.event_name == 'release' }}
@@ -120,11 +128,14 @@ jobs:
     - name: Docker build
       run: docker build -f 'AksDemo.Api1/Dockerfile' -t 45862391/aksdemo.api1:1.0.2 .
 
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ 45862391 }}
+        password: ${{ secrets.DOCKERHUB_PWD }}
+
     - name: Docker push
-      run: |
-        echo "${{ secrets.DOCKERHUB_PWD }}" | docker login -u 45862391 --password-stdin
-        docker push 45862391/aksdemo.api1:1.0.2
-        docker logout
+      run: docker push 45862391/aksdemo.api1:1.0.2
 
   dockerhub-deploy-api2:
     if: ${{ github.event_name == 'release' }}
@@ -149,8 +160,11 @@ jobs:
     - name: Docker build
       run: docker build -f 'AksDemo.Api2/Dockerfile' -t 45862391/aksdemo.api2:1.0.2 .
 
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ 45862391 }}
+        password: ${{ secrets.DOCKERHUB_PWD }}
+
     - name: Docker push
-      run: |
-        echo "${{ secrets.DOCKERHUB_PWD }}" | docker login -u 45862391 --password-stdin
-        docker push 45862391/aksdemo.api2:1.0.2
-        docker logout
+      run: docker push 45862391/aksdemo.api2:1.0.2
